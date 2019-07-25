@@ -6,8 +6,8 @@ from os.path import basename
 class LazyLogger:
 	logger: logging.Logger
 
-	def __init__(self, logger: logging.Logger):
-		self.logger = logger
+	def __init__(self, name=None):
+		self.logger: logging.Logger = logging.getLogger(name)
 
 	def get_logger(self):
 		return self.logger
